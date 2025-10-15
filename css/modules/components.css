@@ -1,0 +1,449 @@
+/* Reusable Component Styles with Modern Enhancements */
+
+/* Container */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    width: 100%;
+}
+
+/* Buttons with Enhanced Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow-lg), 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-2xl), 0 8px 24px rgba(37, 99, 235, 0.6);
+    color: white;
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: var(--glass-blur);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-600);
+    border: 2px solid var(--primary-600);
+}
+
+.btn-outline:hover {
+    background: var(--primary-600);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Card Styles with Glassmorphism */
+.card {
+    background: white;
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-200);
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-2xl);
+}
+
+.card-glass {
+    background: var(--glass-background);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+}
+
+/* Service Cards with Modern Effects */
+.service-card {
+    background: white;
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    position: relative;
+    border: 1px solid var(--gray-200);
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2xl);
+    border-color: var(--primary-200);
+}
+
+.service-card.featured {
+    border: 2px solid var(--primary-500);
+    background: linear-gradient(135deg, white 0%, var(--primary-50) 100%);
+    transform: scale(1.02);
+}
+
+.service-card.featured:hover {
+    transform: scale(1.02) translateY(-8px);
+}
+
+.service-badge {
+    position: absolute;
+    top: -0.5rem;
+    right: var(--spacing-md);
+    background: var(--gradient-accent);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: var(--shadow-md);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-lg);
+    display: block;
+    transition: transform var(--transition-base);
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Form Elements with Enhanced Styling */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--gray-700);
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+    font-family: inherit;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 4px var(--primary-100);
+    transform: translateY(-1px);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Badge Component */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--radius-full);
+    line-height: 1;
+}
+
+.badge-primary {
+    background: var(--primary-100);
+    color: var(--primary-700);
+}
+
+.badge-success {
+    background: var(--success-100);
+    color: var(--success-700);
+}
+
+.badge-accent {
+    background: var(--accent-100);
+    color: var(--accent-700);
+}
+
+/* Alert Component */
+.alert {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-md);
+    border-left: 4px solid;
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background: var(--success-50);
+    color: var(--success-700);
+    border-color: var(--success-500);
+}
+
+.alert-error {
+    background: #fee2e2;
+    color: #991b1b;
+    border-color: #dc2626;
+}
+
+.alert-warning {
+    background: var(--accent-50);
+    color: var(--accent-800);
+    border-color: var(--accent-500);
+}
+
+.alert-info {
+    background: var(--primary-50);
+    color: var(--primary-700);
+    border-color: var(--primary-500);
+}
+
+/* WhatsApp FAB with Enhanced Animation */
+.whatsapp-fab {
+    position: fixed;
+    bottom: var(--spacing-2xl);
+    right: var(--spacing-2xl);
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #25d366, #20b358);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.875rem;
+    text-decoration: none;
+    box-shadow: var(--shadow-xl), 0 6px 24px rgba(37, 211, 102, 0.5);
+    z-index: var(--z-fixed);
+    transition: all var(--transition-base);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.whatsapp-fab:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: var(--shadow-2xl), 0 10px 40px rgba(37, 211, 102, 0.7);
+    color: white;
+}
+
+.whatsapp-fab:active {
+    transform: scale(1.05);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 140px;
+    right: var(--spacing-2xl);
+    width: 52px;
+    height: 52px;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    z-index: var(--z-sticky);
+    box-shadow: var(--shadow-lg);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-2xl);
+}
+
+/* Loading Spinner */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border: 3px solid var(--gray-200);
+    border-top: 3px solid var(--primary-600);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.hidden { display: none; }
+.visible { display: block; }
+
+/* Responsive Grid */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+}
+
+@media (max-width: 1024px) {
+    .grid-3, .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .whatsapp-fab {
+        width: 56px;
+        height: 56px;
+        font-size: 1.5rem;
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+    }
+
+    .back-to-top {
+        width: 48px;
+        height: 48px;
+        bottom: 100px;
+        right: var(--spacing-md);
+    }
+}
