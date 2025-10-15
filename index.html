@@ -15,6 +15,12 @@
     <title>Work in Germany Turk – Almanya Çalışma İzni Danışmanlığı</title>
     <meta name="description" content="Türkler için Almanya'da çalışma izni ve iş başvurusu danışmanlığı. Evrak hazırlığı, başvuru adımları, randevu ve CV desteği. %95 başarı oranı.">
     <meta name="keywords" content="Almanya çalışma izni, Almanya iş vizesi, danışmanlık, Türkler için Almanya'da iş">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <link rel="canonical" href="https://workingermanyturk.com/">
     <link rel="icon" href="assets/favicon.png">
     
@@ -145,10 +151,10 @@
                     </div>
 
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="contact.html">
+                        <a class="btn btn-primary" href="contact.html" onclick="trackEvent('cta_click', 'engagement', 'hero_free_consultation')">
                             📞 Ücretsiz Ön Görüşme Al
                         </a>
-                        <a class="btn btn-secondary" href="services.html">
+                        <a class="btn btn-secondary" href="services.html" onclick="trackEvent('cta_click', 'engagement', 'hero_view_services')">
                             📋 Hizmetleri Gör
                         </a>
                     </div>
@@ -193,7 +199,7 @@
                                     <option>Bilmiyorum</option>
                                 </select>
                             </div>
-                            <button class="btn btn-primary btn-full">Değerlendir</button>
+                            <button class="btn btn-primary btn-full" onclick="handleQuickEvaluation()">Değerlendir</button>
                         </div>
                     </div>
                 </div>
@@ -338,7 +344,7 @@
 
             <div class="faq-cta">
                 <p>Daha fazla soru mu var?</p>
-                <a href="contact.html" class="btn btn-primary">Bize Ulaşın</a>
+                <a href="contact.html" class="btn btn-primary" onclick="trackEvent('cta_click', 'engagement', 'faq_contact_us')">Bize Ulaşın</a>
             </div>
         </div>
     </section>
@@ -387,7 +393,7 @@
             <div class="footer-content">
                 <div class="footer-main">
                     <div class="footer-brand">
-                        <img src="assets/Logo.png" alt="Work in Germany Turk" class="footer-logo">
+                        <img src="assets/Logo.png" alt="Work in Germany Turk" class="footer-logo" loading="lazy">
                         <h3>Work in Germany Turk</h3>
                         <p>Türkler için Almanya'da çalışma izni danışmanlığı. 5 yıllık tecrübe, %95 başarı oranı.</p>
                     </div>

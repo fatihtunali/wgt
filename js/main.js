@@ -26,7 +26,6 @@
         initModalSystem();
         initTooltips();
         initBackToTop();
-        console.log('🚀 Work in Germany Turk - App initialized successfully!');
     }
 
     /**
@@ -268,7 +267,6 @@
             }
         })
         .catch(error => {
-            console.error('Form submission error:', error);
             showAlert('error', 'Bağlantı hatası. Lütfen internet bağlantınızı kontrol edin.');
         })
         .finally(() => {
@@ -357,8 +355,7 @@
                 this.classList.add('active');
                 
                 const selectedLang = this.textContent.trim();
-                console.log('Language changed to:', selectedLang);
-                
+
                 // Here you would implement actual language switching
                 // For now, just show a message
                 if (selectedLang !== 'TR') {
@@ -673,17 +670,17 @@
         }
     };
 
-    // Service worker registration (for PWA capabilities)
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                    console.log('SW registered: ', registration);
-                })
-                .catch(registrationError => {
-                    console.log('SW registration failed: ', registrationError);
-                });
-        });
-    }
+    // Service worker registration disabled - implement when sw.js is ready
+    // if ('serviceWorker' in navigator) {
+    //     window.addEventListener('load', function() {
+    //         navigator.serviceWorker.register('/sw.js')
+    //             .then(registration => {
+    //                 // Service worker registered
+    //             })
+    //             .catch(registrationError => {
+    //                 // Service worker registration failed
+    //             });
+    //     });
+    // }
 
 })();
